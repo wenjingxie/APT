@@ -587,6 +587,15 @@ class Error(webapp2.RequestHandler):
 		self.response.write("""<form action="/"><input type = "submit"
 		 name = "return" value = "Return to main"></form></body></html>""")
 
+class Social(webapp2.RequestHandler):
+	def get(self):
+		self.response.write("""<!doctype html><html><body>
+			The page hasn't been implemented yet.""")
+		self.response.write("""<form action="/"><input type = "submit"
+		 name = "return" value = "Return to main"></form></body></html>""")
+
+
+
 class CronJob(webapp2.RequestHandler):
 	global frequency, count
 	def get(self):
@@ -621,5 +630,5 @@ application = webapp2.WSGIApplication([
     ('/viewSingle/([^/]+)?/([^/]+)?/([^/]+)?', ViewSingle), ('/getUrl', ImageUrlAPI),('/upload([^/]+)?', UploadHandler),('/subscribe/([^/]+)?/([^/]+)?', Subscribe), ('/subscribeAPI', SubscribeAPI),
     ('/search', Search), ('/searchSubmit', SearchSubmit), ('/searchAPI', SearchAPI),
     ('/trending', Trending), ('/trendingAPI', TrendingAPI), ('/updateRate', UpdateReportRate),
-    ('/tasks/summary', CronJob),('/error', Error)
+    ('/tasks/summary', CronJob),('/error', Error),('/social', Social)
 ], debug=True)
